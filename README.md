@@ -1,9 +1,9 @@
 CMPM121 Game Technologies - Final Project  
 
-(insert gif here) 
+![alt text](https://github.com/caxchen/CMPM_121_Final_Project/blob/main/final.gif)  
 
 **Description**  
-...
+Dog Knight is on the loose! Throw bones at it to slow it down!
 
 **How to Play**  
 *WASD to move, move mouse to look around.*  
