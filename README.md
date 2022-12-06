@@ -14,6 +14,7 @@ CMPM121 Game Technologies - Final Project
 - [Free Trees](https://assetstore.unity.com/packages/3d/vegetation/trees/free-trees-103208)
 - [Low Poly Rock Pack](https://assetstore.unity.com/packages/3d/environments/low-poly-rock-pack-57874)
 - [Dog Bone](https://www.cgtrader.com/free-3d-models/animals/mammal/dog-bone-208f77e8-9ad5-4ef7-8abc-966a12bb4ec3)
+- [Baker's House](https://assetstore.unity.com/packages/3d/environments/fantasy/baker-s-house-26443)
 
 **Sources**  
 - [Unity Docs 2021.3](https://docs.unity3d.com/Manual/index.html)
