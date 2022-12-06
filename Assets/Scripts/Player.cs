@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 public class Player : MonoBehaviour
+
 {
     public float speed = 10;
     //public ParticleSystem ps;
@@ -13,10 +15,18 @@ public class Player : MonoBehaviour
     private float rotationY; // mouse Y movement (front or back)
     private float heightMovement; // range between -1 (down) to 1 (up)
     private float rollAmount; // range between -1 (left) to 1 (right)
-    // Start is called before the first frame update
+    // Start is called before the first frame update 
+
+    private GameObject cam;
+    private GameObject body;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //GameObject body = this.gameObject.transform.getChild(0).getComponent<Rigidbody>();
+        cam = GameObject.Find("Player");
+        //body = self.transform.GetChild(1).gameObject;
+        body = GameObject.Find("body");
+        rb = body.GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked; // hide cursor when playing the game
         //ps.Stop();
     }
@@ -56,9 +66,39 @@ public class Player : MonoBehaviour
         rb.AddRelativeForce(movement * speed); //Local space
         // rb.AddForce(movement * speed); //World space
         // transform.Translate(new Vector3(-movementY, 0.0f, movementX) * speed * Time.fixedDeltaTime);
-        Vector3 rotation = new Vector3(-rotationY, rotationX, -rollAmount);
-        Quaternion deltaRotation = Quaternion.Euler(rotation * 10.0f * 
-            Time.fixedDeltaTime);
-        rb.MoveRotation(rb.rotation * deltaRotation);
+        //Vector3 rotation = new Vector3(-rotationY, rotationX, -rollAmount);
+        //Quaternion deltaRotation = Quaternion.Euler(rotation * 10.0f * Time.fixedDeltaTime);
+        //rb.MoveRotation(rb.rotation * deltaRotation);
+         float lookModifier = 0.75f;
+         cam.transform.Rotate(-rotationY*lookModifier, rotationX*lookModifier, 0f);
+         float dif = 6f;
+         float b = body.transform.eulerAngles.y;
+         float c = cam.transform.eulerAngles.y;
+         float cminusb = c - b;
+         if (b>c) {
+            if (b-c > 180f && b-c>dif) { //rotate negative
+                //Debug.Log(c.ToString()+"/"+b.ToString()+"  rotate "+(dif).ToString());
+                body.transform.Rotate(0, dif, 0);
+            }
+            else if (b-c < 180f && b-c>dif) { //rotate positive
+                //Debug.Log(c.ToString()+"/"+b.ToString()+"  rotate "+(-dif).ToString());
+                body.transform.Rotate(0, -dif, 0);
+            }
+         } else if (c>b) {
+            if (cminusb > 180f && cminusb > dif) { //rotate negative
+                //Debug.Log(c.ToString()+"/"+b.ToString()+"  rotate "+(-dif).ToString());
+                body.transform.Rotate(0, -dif, 0);
+            }
+            else if (cminusb < 180f-dif && cminusb > dif) { //rotate positive
+                //Debug.Log(c.ToString()+"/"+b.ToString()+"  rotate "+(dif).ToString());
+                body.transform.Rotate(0, dif, 0);
+            }
+         }
+         cam.transform.rotation = Quaternion.Euler(cam.transform.eulerAngles.x, cam.transform.eulerAngles.y, 0);
+         body.transform.rotation = Quaternion.Euler(0, body.transform.eulerAngles.y, 0);
+
+        cam.transform.position = body.transform.position;
+
     }
+
 }
