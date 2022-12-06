@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/attackdoggo.unity
+    guid: fd112f952add848e0a7e73457771c14d
+  - enabled: 1
+    path: Assets/endScene.unity
+    guid: 9f528f104e74c4dcc924ec772805df02
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 123a8084a283e4501a98b6025170755e, type: 2}
