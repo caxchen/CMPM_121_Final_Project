@@ -16,7 +16,9 @@ public class boneParticle : MonoBehaviour
 
     private void OnParticleCollision(GameObject other){
         int events = particleSystem.GetCollisionEvents(other, colEvents);
-        Debug.Log("hit");
+        if (other.name == "DogKnight") {
+            other.GetComponent<followPlayer>().Hit();
+        }
         for(int i = 0; i < events; i++)
         {
 

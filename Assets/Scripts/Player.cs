@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
         //rb.MoveRotation(rb.rotation * deltaRotation);
          float lookModifier = 0.75f;
          cam.transform.Rotate(-rotationY*lookModifier, rotationX*lookModifier, 0f);
-         float dif = 6f;
+         float dif = 8f; //this controls the speed of rotation
          float b = body.transform.eulerAngles.y;
          float c = cam.transform.eulerAngles.y;
          float cminusb = c - b;
