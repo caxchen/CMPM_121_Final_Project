@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
 
-public class followPlayer : MonoBehaviour {
+public class followPlayer : MonoBehaviour
+{
 
     public NavMeshAgent enemy;
     public Transform Player;
@@ -12,18 +13,22 @@ public class followPlayer : MonoBehaviour {
     private float startAngularSpeed;
     private float speed;
 
-    void Start () {
+    void Start()
+    {
         startSpeed = enemy.speed;
         startAngularSpeed = enemy.angularSpeed;
         speed = startSpeed;
     }
-    void Update () {
+    void Update()
+    {
         //Debug.Log(enemy.speed.ToString()+"            ignore this number: "+UnityEngine.Random.Range(0f, 100f).ToString());
         enemy.SetDestination(Player.position);
     }
 
-    public void Hit() {
-        if (!hit) {
+    public void Hit()
+    {
+        if (!hit)
+        {
             //Debug.Log("got hit"+"            ignore this number: "+UnityEngine.Random.Range(0f, 100f).ToString());
             StartCoroutine(hitCoroutine());
         }
