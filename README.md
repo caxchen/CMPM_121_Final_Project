@@ -3,7 +3,12 @@ CMPM121 Game Technologies - Final Project
 ![alt text](https://github.com/caxchen/CMPM_121_Final_Project/blob/main/final.gif)  
 
 **Description**  
-Dog Knight is on the loose! Throw bones at it to slow it down!
+Dog Knight is on the loose! Throw bones at it to slow it down!  
+
+- DK starts to follow player based on closeness
+- interaction 1: DK collsion with player triggers end scene
+- interaction 2: particle system to shoot bones, bones collide with DK to slow it down
+- environment building with trees and rocks as obstacles and borders
 
 **How to Play**  
 *WASD to move, move mouse to look around.*  
