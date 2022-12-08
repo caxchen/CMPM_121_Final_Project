@@ -9,6 +9,7 @@ Dog Knight is on the loose! Throw bones at it to slow it down!
 - interaction 1: DK collsion with player triggers end scene
 - interaction 2: particle system to shoot bones, bones collide with DK to slow it down
 - environment building with trees and rocks as obstacles and borders
+- post processing fx: ambient occlusion
 
 **How to Play**  
 *WASD to move, move mouse to look around.*  
